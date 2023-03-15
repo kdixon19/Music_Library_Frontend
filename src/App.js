@@ -5,7 +5,7 @@ import MusicTable from './Components/MusicTable/MusicTable';
 
 function App() {
 
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState([{title: 'HOOPTI', album: 'NOIR', artist: 'Smino', genre: 'Hip-Hop/Rap', release_date: '2018-01-01'}]);
 
   useEffect(() => {
     getAllSongs();
