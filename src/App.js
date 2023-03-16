@@ -5,7 +5,7 @@ import MusicTable from './Components/MusicTable/MusicTable';
 
 function App() {
 
-  const [songs, setSongs] = useState([{title: 'HOOPTI', album: 'NOIR', artist: 'Smino', genre: 'Hip-Hop/Rap', release_date: '2018-01-01'}]);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     getAllSongs();
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={getAllSongs()}>Get All Songs!</button>
+      <button onClick={() => getAllSongs()}>Get All Songs!</button>
       <MusicTable songData = {songs} />
     </div>
   );

@@ -1,4 +1,4 @@
-const Music = ({title},{album},{artist},{genre},{release_date}) => {
+const Music = ({title,album,artist,genre,release_date}) => {
     return ( 
         <div>
             <h1>{title}</h1>
