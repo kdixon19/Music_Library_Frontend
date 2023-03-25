@@ -4,27 +4,27 @@ const SearchBar = (props) => {
     
     const [searchInput, setSearchInput] = useState("");
 
-    const handleChange = (event) => {
-        event.preventDefault();
-        setSearchInput(event.target.value);
-    };
 
-    if (searchInput.length > 0) {
-        data = props.songData.filter((el) => {
+    function handleSubmit (event) {
+        event.preventDefault();
+        let data = props.songData.filter((el) => {
             return (
                 el.title === searchInput ||
-                el.release_date === searchInput
+                el.release_date === searchInput ||
+                el.artist === searchInput ||
+                el.album === searchInput ||
+                el.genre === searchInput
             )
-        })
-        setSongs(data)
-
+        });
+        props.setSongs(data)
     }
 
 
     
     return ( 
-        <form>
-            
+        <form onSubmit={handleSubmit}>
+            <input type = 'text' value={searchInput} onChange = {(event) => setSearchInput(event.target.value)} />
+            <button type = 'submit'>Search</button>
         </form>
      );
 }
