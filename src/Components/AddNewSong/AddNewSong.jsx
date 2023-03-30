@@ -16,7 +16,7 @@ const AddNewSong = (props) => {
             album: album,
             artist: artist,
             genre: genre,
-            releaseDate: releaseDate,
+            release_date: releaseDate,
         };
         console.log(newPost)
         props.createNewSong(newPost)

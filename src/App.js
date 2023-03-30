@@ -20,11 +20,13 @@ function App() {
   }
 
   async function createNewSong(newSong){
-    let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
-    if (response.status === 201) {
-      await getAllSongs();
-      let entries = [...songs, newSong]
-      setSongs(entries)
+    try{
+      let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
+      if (response.status === 201) {
+        await getAllSongs();
+      }
+    }catch(error){
+      console.log(error.response.data)
     }
 
   }
